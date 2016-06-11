@@ -2,7 +2,7 @@
 
 namespace opid.shared {
 	class RegisterController {
-		public usStates: altsrc.UsState[];
+        public usStates: util.UsState[];
 		public errors: string[];
 		private registerForm: ng.IFormController;
 
@@ -30,7 +30,7 @@ namespace opid.shared {
 		constructor(
 			private $state: any,
 			private user: IUserService,
-			usStateService: altsrc.UsStateService) {
+            usStateService: util.UsStateService) {
 			this.usStates = usStateService.getStates();
 		}
 

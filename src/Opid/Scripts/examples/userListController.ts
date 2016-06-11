@@ -7,19 +7,19 @@ namespace opid.examples {
 		constructor(
 			private $http: ng.IHttpService,
 			$scope: ng.IScope,
-			paginationFactory: altsrc.IPaginationFactory<any>) {
-			this.pagination = paginationFactory.getPaginator(new altsrc.PaginationParams(
+			paginationFactory: util.IPaginationFactory<any>) {
+            this.pagination = paginationFactory.getPaginator(new util.PaginationParams(
 				$scope,
 				this.getUsers,
 				'username',
 				true,
-				[new altsrc.PaginationArg('searchText', true, 250)],
+                [new util.PaginationArg('searchText', true, 250)],
 				true,
 				1,
 				2));
 		}
 
-		private getUsers = (params: altsrc.PaginationParams<any>) => {
+        private getUsers = (params: util.PaginationParams<any>) => {
 			return this.$http({
 				url: '/api/Example/GetUsers',
 				method: 'GET',

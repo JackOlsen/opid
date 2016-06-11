@@ -8,7 +8,7 @@ namespace opid.util {
 		compareTo: any;
 	}
 	interface ICompareToModelController extends ng.INgModelController {
-		$validators: ICompareToValidator
+        $validators: ICompareToValidator;
 	}
 
 	class CompareTo implements ng.IDirective {
@@ -16,22 +16,20 @@ namespace opid.util {
 		scope: Object = {
 			otherModelValue: "=compareTo"
 		};
-
-		constructor() { }
-
-		link: ng.IDirectiveLinkFn = (
-			scope: ICompareToScope,
-			element: ng.IAugmentedJQuery,
-			attributes: ng.IAttributes,
-			ngModel: ICompareToModelController) => {
-			ngModel.$validators.compareTo = function (modelValue: any) {
-				return modelValue == scope.otherModelValue;
-			};
-			scope.$watch("otherModelValue", function () {
-				ngModel.$validate();
-			});
-		}
+        
+        link: ng.IDirectiveLinkFn = (
+            scope: ICompareToScope,
+            element: ng.IAugmentedJQuery,
+            attributes: ng.IAttributes,
+            ngModel: ICompareToModelController) => {
+            ngModel.$validators.compareTo = function (modelValue: any) {
+                return modelValue == scope.otherModelValue;
+            };
+            scope.$watch("otherModelValue", function () {
+                ngModel.$validate();
+            });
+        };
 	}
 
-	angular.module('util').directive('compareTo', () => new CompareTo());
+	angular.module("util").directive("compareTo", () => new CompareTo());
 }

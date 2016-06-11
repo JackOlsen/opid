@@ -22,13 +22,12 @@ namespace opid.util {
 		constructor(
 			public scope: ng.IScope,
 			public getItems: (params: PaginationParams<any>) => ng.IPromise<any>,
-			initialOrderBy: string = '',
+			initialOrderBy: string = "",
 			initialOrderDesc: boolean = false,
 			public additionalArgs: PaginationArg[] = new Array<PaginationArg>(),
 			public getImmediately: boolean = false,
 			public pageNumber: number = 1,
-			public pageSize: number = 10)
-		{
+			public pageSize: number = 10) {
 			this.orderBy = initialOrderBy;
 			this.orderDesc = initialOrderDesc;
 		}
@@ -76,13 +75,13 @@ namespace opid.util {
 			if (this.queryParams.getImmediately !== false) {
 				this.getItems();
 			}
-		}
-		
-		public getItems(): void {
+        }
+
+        public getItems(): void {
 			this.queryParams.getItems(this.queryParams)
 				.then((response: IPaginationResponse<TResult>) => {
 					this.results = response.data;
-					this.itemCount = response.headers('item-count');
+					this.itemCount = response.headers("item-count");
 				});
 		}
 
@@ -91,8 +90,7 @@ namespace opid.util {
 		}
 	}
 
-	class PaginationFactory<TResult>
-	{
+	class PaginationFactory<TResult> {
 		public getPaginator(params: PaginationParams<TResult>) {
 			const p = new Paginator(params);
 			p.init();
@@ -100,5 +98,5 @@ namespace opid.util {
 		}
 	}
 
-	angular.module('util').service('paginationFactory', PaginationFactory);
+	angular.module("util").service("paginationFactory", PaginationFactory);
 }
