@@ -10,7 +10,6 @@ src/Opid/Styles/**/*.css
 src/Opid/typings
 src/Opid/wwwroot/dev
 src/Opid/wwwroot/prod
-src/Opid/wwwroot/lib/angular-filter
 src/Opid/wwwroot/lib/angular-mask
 src/Opid/wwwroot/lib/fastclick
 src/Opid/wwwroot/lib/jquery
