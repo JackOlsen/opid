@@ -1,0 +1,38 @@
+﻿<div class="row">
+	<div class="input-group">
+		<input type="text" ng-model="vm.pagination.queryParams.searchText" 
+			   class="form-control"
+			   placeholder="User Name"/>
+		<div class="input-group-addon">
+			<span class="icon icon-magnifying-glass"></span>
+		</div>
+	</div>
+</div>
+<div class="row" ng-show="!vm.pagination.results.length">
+	<em class="col-xs-12 text-center">no users found</em>
+</div>
+<table class="table table-striped" ng-show="vm.pagination.results.length">
+	<thead>
+		<tr>
+			<th sort order="'id'" by="vm.pagination.queryParams.orderBy" order-desc="vm.pagination.queryParams.orderDesc">ID</th>
+			<th sort order="'username'" by="vm.pagination.queryParams.orderBy" order-desc="vm.pagination.queryParams.orderDesc">User Name</th>
+			<th sort order="'email'" by="vm.pagination.queryParams.orderBy" order-desc="vm.pagination.queryParams.orderDesc">Email</th>
+			<th sort order="'phonenumber'" by="vm.pagination.queryParams.orderBy" order-desc="vm.pagination.queryParams.orderDesc">Phone</th>
+			<th sort order="'securitystamp'" by="vm.pagination.queryParams.orderBy" order-desc="vm.pagination.queryParams.orderDesc">Security Stamp</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in vm.pagination.results">
+			<td>{{ user.Id }}</td>
+			<td>{{ user.UserName }}</td>
+			<td>{{ user.Email }}</td>
+			<td>{{ user.PhoneNumber }}</td>
+			<td>{{ user.SecurityStamp }}</td>
+		</tr>
+	</tbody>
+</table>
+<div class="text-center" ng-show="vm.pagination.hasMultiplePages()">
+	<uib-pagination total-items="vm.pagination.itemCount"
+					items-per-page="vm.pagination.queryParams.pageSize"
+					ng-model="vm.pagination.queryParams.pageNumber"></uib-pagination>
+</div>

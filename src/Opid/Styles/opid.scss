@@ -1,0 +1,42 @@
+﻿body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+ul.login-nav{
+    /* hardcode margin to workaround bootstrap bug http://stackoverflow.com/questions/15118310/bootstrap-navbar-align-want-align-to-the-right */
+    margin-right:15px;
+}
+
+/* Carousel */
+.carousel-caption {
+    z-index: 10 !important;
+	p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-caption {
+        z-index: 10 !important;
+    }
+}
+
+.control-label {
+	.hint {
+		font-weight:normal;
+	}
+}
+
+/* Sorters */
+.sorter {
+	opacity:.3;	
+}
+.sorter.sorted {
+	opacity:1;
+}
+
+.clickable {
+	cursor:pointer;
+}

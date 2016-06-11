@@ -1,0 +1,71 @@
+﻿<div ng-show="!navCtrl.user.userName">
+    <div class="hr-divider">
+        <ul class="nav nav-pills hr-divider-content hr-divider-nav">
+            <li>
+                <a  ui-sref="app.login">Login</a>
+            </li>
+            <li>
+                <a ui-sref="app.forgotPassword">Forgot Password</a>
+            </li>
+            <li>
+                <a ui-sref="app.register">Register</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-show="navCtrl.user.userName" class="col-sm-3 sidebar">
+    <nav class="sidebar-nav">
+        <div class="sidebar-header">
+            <button class="nav-toggler nav-toggler-sm sidebar-toggler collapsed" type="button" data-toggle="collapse" data-target="#nav-toggleable-sm" aria-expanded="false">
+                <span class="sr-only">Toggle nav</span>
+            </button>
+            <a class="sidebar-brand img-responsive" href="index.html">
+                <span class="icon icon-leaf sidebar-brand-icon"></span>
+            </a>
+        </div>
+
+        <div class="nav-toggleable-sm collapse" id="nav-toggleable-sm" aria-expanded="false" style="height: 0px;">
+            <form class="sidebar-form">
+                <input class="form-control" type="text" placeholder="Search...">
+                <button type="submit" class="btn-link">
+                    <span class="icon icon-magnifying-glass"></span>
+                </button>
+            </form>
+            <ul class="nav nav-pills nav-stacked">
+
+                <li class="nav-header">Orders</li>
+
+                <li>
+                    <a href="#">
+                        Pending Orders
+                    </a>
+                </li>
+                <li>
+                    <a href="#">New Order</a>
+                </li>
+                <li>
+                    <a href="docs/index.html">
+                        Toolkit docs
+                    </a>
+                </li>
+
+                <li class="nav-header">{{ navCtrl.user.userName }}</li>
+                <li ng-class="{'active' : navCtrl.state.is('app.account')}">
+                    <a href="app.account">Overview</a>
+                </li>
+                <li ng-class="{'active' : navCtrl.state.is('app.account.changePassword')}">
+                    <a ui-sref="app.account.changePassword">Change Password</a>
+                </li>
+                <li ng-class="{'active' : navCtrl.state.is('app.kitchensink')}">
+                    <a ui-sref="app.kitchensink">Kitchen Sink</a>
+                </li>
+                <li>
+                    <a href="#" ng-click="navCtrl.logOff()">Log out</a>
+                </li>
+                
+            </ul>
+            <hr class="visible-xs m-t">
+        </div>
+    </nav>
+</div>

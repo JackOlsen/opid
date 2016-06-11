@@ -1,0 +1,143 @@
+﻿<form name="vm.registerForm" show-errors="vm.registerForm"
+	  ng-submit="vm.registerForm.$valid && vm.submit()"
+	  novalidate class="row" role="form">
+	<div class="col-md-offset-3 col-md-6 col-sm-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><div class="panel-title">Account Information</div></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-sm-6 col-xs-12">
+						<label class="control-label" for="firstName">First name</label>
+						<input type="text" class="form-control validated-control" id="firstName" name="firstName" placeholder="First name" required autofocus
+							   ng-model="vm.firstName">
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label class="control-label" for="lastName">Last name</label>
+						<input type="text" class="form-control validated-control" id="lastName" name="lastName" placeholder="Last name" required
+							   ng-model="vm.lastName">
+					</div>
+					<div class="form-group col-xs-12">
+						<label class="control-label" for="email">Email address</label>
+						<input type="email" class="form-control validated-control" id="email" name="email" placeholder="Email address" required
+							   ng-model="vm.email">
+					</div>
+					<div class="form-group col-xs-12">
+						<label class="control-label" for="phone">Phone #</label>
+						<input type="tel" mask="ddd-ddd-dddd" class="form-control validated-control" id="phone" name="phone" placeholder="Phone #" required
+							   ng-model="vm.phone">
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label class="control-label" for="password">
+							Password
+							<span class="hint">(min. 8 characters)</span>
+						</label>
+						<input type="password" class="form-control validated-control" id="password" name="password" placeholder="Password" required pattern=".{8,}"
+							   ng-model="vm.password">
+					</div>
+					<div class="form-group col-sm-6 col-xs-12">
+						<label class="control-label" for="confirmPassword">Confirm Password</label>
+						<input type="password" class="form-control validated-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" 
+							   ng-model="vm.confirmPassword"
+							   compare-to="vm.password">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-offset-3 col-md-6 col-sm-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><div class="panel-title">Shipping Address</div></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<label class="control-label" for="shipStreet">Address</label>
+						<input type="text" class="form-control validated-control" id="shipStreet" name="shipStreet" placeholder="Address" required
+							   ng-model="vm.shippingAddress.street">
+					</div>
+					<div class="form-group col-sm-5 col-xs-12">
+						<label class="control-label" for="shipCity">City</label>
+						<input type="text" class="form-control validated-control" id="shipCity" name="shipCity" placeholder="City" required
+							   ng-model="vm.shippingAddress.city">
+					</div>
+					<div class="form-group col-sm-4 col-xs-6">
+						<label class="control-label" for="shipState">State</label>
+						<select class="form-control validated-control" id="shipState" name="shipState" required
+								ng-model="vm.shippingAddress.state">
+							<option ng-repeat="state in vm.usStates" value="{{state.abbreviation}}">{{state.name}}</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-3 col-xs-6">
+						<label class="control-label" for="shipZip">Zip</label>
+						<input type="tel" mask="ddddd" class="form-control validated-control" id="shipZip" name="shipZip" placeholder="Zip" required
+							   ng-model="vm.shippingAddress.zip">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-offset-3 col-md-6 col-sm-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading"><div class="panel-title">Billing Information</div></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="form-group col-md-12 col-sm-6 col-xs-12">
+						<label class="control-label" for="ccNum">Credit Card #</label>
+						<input type="text" mask="dddd-dddd-dddd-dddd?" class="form-control validated-control" id="ccNum" name="ccNum" placeholder="Credit Card #" required
+							   ng-model="vm.creditCardNumber">
+					</div>
+					<div class="form-group col-md-6 col-sm-3 col-xs-6">
+						<label class="control-label" for="ccExp">Expiration Date</label>
+						<input type="text" mask="d?d/dd" class="form-control validated-control" id="ccExp" name="ccExp" placeholder="MM/YY" required
+							   ng-model="vm.creditCardExpiration">
+					</div>
+					<div class="form-group col-md-6 col-sm-3 col-xs-6">
+						<label class="control-label" for="ccid">CCV</label>
+						<input type="text" mask="dddd?" class="form-control validated-control" id="ccid" name="ccid" placeholder="CCV" required
+							   ng-model="vm.ccid">
+					</div>
+					<div class="form-group col-xs-12">
+						<label class="control-label">
+							<input type="checkbox" id="shippingAddressIsBillingAddress" name="shippingAddressIsBillingAddress" 
+								   ng-model="vm.billingAddress.useShippingAddress" />
+							Use shipping address as billing address
+						</label>
+					</div>
+					<div ng-if="!vm.billingAddress.useShippingAddress">
+						<div class="form-group col-xs-12">
+							<label class="control-label" for="billStreet">Address</label>
+							<input type="text" class="form-control validated-control" id="billStreet" name="billStreet" placeholder="Address" required
+								   ng-model="vm.billingAddress.street">
+						</div>
+						<div class="form-group col-sm-5 col-xs-12">
+							<label class="control-label" for="billCity">City</label>
+							<input type="text" class="form-control validated-control" id="billCity" name="billCity" placeholder="City" required
+								   ng-model="vm.billingAddress.city">
+						</div>
+						<div class="form-group col-sm-4 col-xs-6">
+							<label class="control-label" for="billState">State</label>
+							<select class="form-control validated-control" id="billState" name="billState" required
+									ng-model="vm.billingAddress.state">
+								<option ng-repeat="state in vm.usStates" value="{{state.abbreviation}}">{{state.name}}</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-3 col-xs-6">
+							<label class="control-label" for="bill">Zip</label>
+							<input type="tel" mask="ddddd" class="form-control validated-control" id="billZip" name="billZip" placeholder="Zip" required pattern=""
+								   ng-model="vm.billingAddress.zip">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-offset-3 col-md-6 col-xs-12"  ng-show="vm.errors.length">
+		<div class="alert alert-danger">
+			<ul class="list-unstyled">
+				<li ng-repeat="error in vm.errors">{{ error }}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-offset-3 col-md-6 col-xs-12">
+		<button type="submit" class="btn btn-primary btn-block">Register</button>
+	</div>
+</form>
