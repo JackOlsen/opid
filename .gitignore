@@ -2,6 +2,7 @@ artifacts
 .vs
 *.suo
 src/Opid/*.log
+src/Opid/Opid.xproj.user
 src/Opid/node_modules
 src/Opid/typings
 src/Opid/Scripts/**/*.js
