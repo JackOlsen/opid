@@ -10,21 +10,8 @@ namespace opid.shared {
 		public firstName: string = 'test';
 		public lastName: string = 'test';
 		public email: string;
-		public phone: string = '1231231234';
 		public password: string = 'Password!23';
-		public confirmPassword: string = 'Password!23';
-		public shippingAddress: Object = {
-			street: 'blah',
-			city: 'blah',
-			state: 'OR',
-			zip: '12435'
-		};
-		public creditCardNumber: string = '1234123412341234';
-		public creditCardExpiration: string = '1212';
-		public ccid: string = '1234';
-		public billingAddress: Object = {
-			useShippingAddress: true
-		};
+		public confirmPassword: string = 'Password!23';		
 		// end auto-filled for ease of testing
 
 		constructor(

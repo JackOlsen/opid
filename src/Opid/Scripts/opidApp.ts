@@ -78,9 +78,7 @@ namespace opid {
 				url: '',
 				views: {
 					'nav@': {
-						//templateUrl: '/app/shared/_nav.html',
-						//templateUrl: '/app/shared/_iconav.html',
-						templateUrl: '/app/shared/_sidenav.html',
+						templateUrl: '/app/shared/_nav.html',
 						controller: 'navController',
 						controllerAs: 'navCtrl'
 					}
@@ -132,29 +130,7 @@ namespace opid {
 				data: {
 					auth: false
 				},
-			})
-			.state('app.kitchensink', {
-				url: '/kitchensink',
-				views: {
-					'main@': {
-						templateUrl: '/app/shared/_kitchensink.html'
-					}
-				}
-			})
-			.state('app.userList', {
-				url: '/userList',
-				views: {
-					'main@': {
-						templateUrl: '/app/examples/_userList.html',
-						controller: 'userListController',
-						controllerAs: 'vm'
-					}
-				},
-				data: {
-					auth: false
-				}
-			})
-			;
+			});
 	});
 
 	opidApp.run(function (
