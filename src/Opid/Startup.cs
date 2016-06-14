@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Http.Internal;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
@@ -41,6 +43,8 @@ namespace Opid
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<ApplicationDbContext>(options =>
@@ -53,7 +57,7 @@ namespace Opid
 			services.AddCaching();
 			services.AddSession(/* options go here */);
 
-			services.AddMvc();
+            services.AddMvc();
 
 			services.AddSingleton<CacheCow>();
 		}
@@ -109,9 +113,14 @@ namespace Opid
 
 				routes.MapRoute(
 					name: "app",
-					template: "{*url}",
+					template: "e/{*url}",
 					defaults: new { controller = "App", action = "Index" });
-			});
+
+                routes.MapRoute(
+                    name: "root",
+                    template: string.Empty,
+                    defaults: new { controller = "App", action = "Index" });
+            });
         }
 
         // Entry point for the application.

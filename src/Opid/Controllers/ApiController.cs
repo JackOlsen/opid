@@ -7,6 +7,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Http;
 
 namespace Opid.Controllers
 {
@@ -60,8 +61,10 @@ namespace Opid.Controllers
 		{
 			var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
 			if (result.Succeeded)
-			{
-				return await GetUserObject(model.Email);
+            {
+                var user = await _userManager.FindByNameAsync(model.Email ?? string.Empty);
+                HttpContext.Session.SetString(Constants.AuthenticatedUserIdSessionKey, user.Id);
+                return await GetUserObject(model.Email);
 			}
 			ModelState.AddModelError("errors", "Invalid login attempt.");
 			return HttpBadRequest(ModelState);
@@ -96,7 +99,8 @@ namespace Opid.Controllers
 		public async Task<IActionResult> LogOff()
 		{
 			await _signInManager.SignOutAsync();
-			return Ok();
+            HttpContext.Session.Remove(Constants.AuthenticatedUserIdSessionKey);
+            return Ok();
 		}
 
 		[AllowAnonymous]
@@ -134,9 +138,11 @@ namespace Opid.Controllers
 		private async Task<IActionResult> GetUserObject(string userName)
 		{
 			var user = await _userManager.FindByNameAsync(userName ?? string.Empty);
-			return Json(new
-			{
-				userName = user?.UserName,
+            return Json(new
+            {
+                userName = user?.UserName,
+                firstName = user?.FirstName,
+                lastName = user?.LastName
 			});
 		}
 	}

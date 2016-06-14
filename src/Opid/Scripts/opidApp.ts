@@ -70,12 +70,12 @@ namespace opid {
 		$locationProvider.html5Mode({ enabled: true, requireBase: false });
 		$urlMatcherFactoryProvider.caseInsensitive(true);
 
-		$urlRouterProvider.otherwise('/account');
+		$urlRouterProvider.otherwise('/e/search');
 
 		$stateProvider
 			.state('app', {
 				abstract: true,
-				url: '',
+				url: '/e',
 				views: {
 					'nav@': {
 						templateUrl: '/app/shared/_nav.html',
@@ -91,7 +91,40 @@ namespace opid {
 						return user.loadUser();
 					}
 				}
-			})
+            })
+            .state('app.search', {
+                url: '/search',
+                views: {
+                    'main@': {
+                        templateUrl: '/app/gallery/_search.html',
+                        controller: 'searchController',
+                        controllerAs: 'vm'
+                    }
+                },
+                data: {
+                    auth: false
+                },
+            })
+            .state('app.view', {
+                url: '/view/:eid',
+                views: {
+                    'main@': {
+                        templateUrl: '/app/gallery/_view.html',
+                        controller: 'viewController',
+                        controllerAs: 'vm'
+                    }
+                },
+                data: {
+                    auth: false
+                },
+                resolve: {
+                    loadEntry: function ($stateParams: angular.ui.IStateParamsService) {
+                        //var eid = $stateParams.eid;
+                        // todo: pull down entry by eid
+                        return {};
+                    }
+                }
+            })
 			.state('app.login', {
 				url: '/login',
 				views: {

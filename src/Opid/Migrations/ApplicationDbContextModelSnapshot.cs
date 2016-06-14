@@ -112,6 +112,10 @@ namespace Opid.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -130,6 +134,8 @@ namespace Opid.Migrations
 
                     b.Property<string>("SecurityStamp");
 
+                    b.Property<string>("Suffix");
+
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -144,6 +150,22 @@ namespace Opid.Migrations
                         .HasAnnotation("Relational:Name", "UserNameIndex");
 
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
+                });
+
+            modelBuilder.Entity("Opid.Models.Entry", b =>
+                {
+                    b.Property<int>("EntryId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreatedByUserId");
+
+                    b.Property<DateTimeOffset>("DateCreated");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Diagnosis");
+
+                    b.HasKey("EntryId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityRoleClaim<string>", b =>
@@ -176,6 +198,13 @@ namespace Opid.Migrations
                     b.HasOne("Opid.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Opid.Models.Entry", b =>
+                {
+                    b.HasOne("Opid.Models.ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId");
                 });
         }
     }

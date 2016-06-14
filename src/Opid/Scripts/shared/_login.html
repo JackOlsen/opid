@@ -1,33 +1,41 @@
 ﻿<div class="row">
     <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
-        <h3 class="text-center">Login</h3>
-        <form name="vm.loginForm" show-errors="vm.loginForm"
-              ng-submit="vm.loginForm.$valid && vm.submit()"
-              novalidate role="form">
-            <div class="form-group">
-                <label class="control-label" for="email">Email address</label>
-                <input type="email" class="form-control validated-control" id="email" name="email" placeholder="Email address" required autofocus
-                       ng-model="vm.email">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Login</div>
             </div>
-            <div class="form-group">
-                <a href="#" class="pull-right" ui-sref="app.forgotPassword" tabindex="-1">Forgot password?</a>
-                <label class="control-label" for="password">Password</label>
-                <input type="password" class="form-control validated-control" id="password" name="password" placeholder="Password" required
-                       ng-model="vm.password">
-            </div>
-            <div class="col-xs-12" ng-show="vm.errors.length">
-                <div class="alert alert-danger">
-                    <ul class="list-unstyled">
-                        <li ng-repeat="error in vm.errors">{{ error }}</li>
-                    </ul>
+            <div class="panel-body">
+                <div class="row">
+                    <form name="vm.loginForm" show-errors="vm.loginForm"
+                          ng-submit="vm.loginForm.$valid && vm.submit()"
+                          novalidate role="form">
+                        <div class="col-xs-12 form-group">
+                            <label class="control-label" for="email">Email address</label>
+                            <input type="email" class="form-control validated-control" id="email" name="email" placeholder="Email address" required autofocus
+                                   ng-model="vm.email">
+                        </div>
+                        <div class="col-xs-12 form-group">
+                            <a href="#" class="pull-right" ui-sref="app.forgotPassword" tabindex="-1">Forgot password?</a>
+                            <label class="control-label" for="password">Password</label>
+                            <input type="password" class="form-control validated-control" id="password" name="password" placeholder="Password" required
+                                   ng-model="vm.password">
+                        </div>
+                        <div class="col-xs-12" ng-show="vm.errors.length">
+                            <div class="alert alert-danger">
+                                <ul class="list-unstyled">
+                                    <li ng-repeat="error in vm.errors">{{ error }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </form>
+                    <div class="col-xs-12 form-group">
+                        <a href="#" ui-sref="app.register" class="btn btn-default btn-block">Register</a>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </div>
-            <div class="form-group">
-                <a href="#" ui-sref="app.register" class="btn btn-default btn-block">Register</a>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
