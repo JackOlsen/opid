@@ -57,24 +57,33 @@
             $urlMatcherFactoryProvider.caseInsensitive(true);
 
             $urlRouterProvider.otherwise("/gallery");
-            $stateProvider.state("gallery", {
-                url: "/gallery",
-                views: {
-                    "main@": {
-                        templateUrl: "/Scripts/app/gallery/_gallery.html",
-                        controller: "galleryController",
-                        controllerAs: "vm"
-                    }
-                }
-            }).state("gallery.entry", {
-                url: "/:entryId",
-                views: {
-                    "main@": {
-                        templateUrl: "/Scripts/app/gallery/_entry.html",
-                        controller: "entryController",
-                        controllerAs: "vm"
-                    }
-                }
-            });
+        	$stateProvider
+				.state("gallery", {
+					url: "/gallery",
+					views: {
+						"main@": {
+							templateUrl: "/Scripts/app/gallery/_gallery.html",
+							controller: "galleryController",
+							controllerAs: "vm"
+						}
+					}
+				}).state("gallery.entry", {
+					url: "/{entryId:[0-9]*}",
+					views: {
+						"main@": {
+							templateUrl: "/Scripts/app/gallery/_entry.html",
+							controller: "entryController",
+							controllerAs: "vm"
+						}
+					},
+					resolve: {
+                		entry: ["database", "$stateParams", function (database, $stateParams) {
+                			return database.getEntry($stateParams.entryId);
+                		}],
+                		meh: function () {
+                			return 'test';
+                		}
+					}
+				});
         }]);
 }(_, $));

@@ -29,7 +29,8 @@ namespace Opid
 					"~/Scripts/ngMask.min.js",
 					"~/Scripts/angular-filter.min.js",
 					"~/Scripts/bootstrap.js",
-					"~/Scripts/ui-bootstrap-tpls-1.3.3.min.js")
+					"~/Scripts/ui-bootstrap-tpls-1.3.3.min.js",
+					"~/Scripts/opidApp.js")
 				.IncludeDirectory("~/Scripts/app/", "*.js", true));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(

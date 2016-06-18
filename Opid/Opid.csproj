@@ -214,20 +214,45 @@
     <Content Include="Content\bootstrap\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
+    <Content Include="Content\images\BarnhillDermPath-024-0007.png" />
+    <Content Include="Content\images\BarnhillDermPath-024-0008.png" />
+    <Content Include="Content\images\BarnhillDermPath-026-0009.png" />
+    <Content Include="Content\images\BarnhillDermPath-027-0010.png" />
+    <Content Include="Content\images\BarnhillDermPath-027-0011.png" />
+    <Content Include="Content\images\BarnhillDermPath-029-0012.png" />
+    <Content Include="Content\images\BarnhillDermPath-030-0013.png" />
+    <Content Include="Content\images\BarnhillDermPath-030-0014.png" />
+    <Content Include="Content\images\BarnhillDermPath-030-0015.png" />
+    <Content Include="Content\images\BarnhillDermPath-031-0016.png" />
+    <Content Include="Content\images\BarnhillDermPath-032-0017.png" />
+    <Content Include="Content\images\BarnhillDermPath-032-0018.png" />
+    <Content Include="Content\images\BarnhillDermPath-037-0019.png" />
+    <Content Include="Content\images\BarnhillDermPath-037-0020.png" />
+    <Content Include="Content\images\BarnhillDermPath-038-0021.png" />
+    <Content Include="Content\images\BarnhillDermPath-038-0022.png" />
+    <Content Include="Content\images\BarnhillDermPath-039-0023.png" />
+    <Content Include="Content\images\BarnhillDermPath-039-0024.png" />
+    <Content Include="Content\images\BarnhillDermPath-040-0025.png" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-filter.min.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\utility\database.js" />
     <Content Include="Scripts\app\gallery\galleryController.js" />
     <Content Include="Scripts\app\gallery\entryController.js" />
     <Content Include="Scripts\app\gallery\_gallery.html" />
     <Content Include="Scripts\app\gallery\_entry.html" />
-    <Content Include="Scripts\app\opidApp.js" />
+    <Content Include="Scripts\opidApp.js" />
     <Content Include="Scripts\bootstrap-sprockets.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -313,6 +338,7 @@
     <Content Include="Content\bootstrap\mixins\text-overflow.less" />
     <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
     <Content Include="Content\bootstrap\bootswatch.less" />
+    <Content Include="Content\Site.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fastclick.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
