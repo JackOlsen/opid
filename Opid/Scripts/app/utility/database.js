@@ -20,16 +20,94 @@
 		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
 		diagnosis: "Spongiatic dermatitus"
 	});
+	entries.push({
+		entryId: 4,
+		image: "BarnhillDermPath-027-0010.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 5,
+		image: "BarnhillDermPath-027-0011.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 6,
+		image: "BarnhillDermPath-029-0012.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 7,
+		image: "BarnhillDermPath-030-0013.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 8,
+		image: "BarnhillDermPath-030-0014.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 9,
+		image: "BarnhillDermPath-030-0015.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 10,
+		image: "BarnhillDermPath-031-0016.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 11,
+		image: "BarnhillDermPath-032-0017.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 12,
+		image: "BarnhillDermPath-032-0018.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 13,
+		image: "BarnhillDermPath-037-0019.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 14,
+		image: "BarnhillDermPath-037-0020.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
+	entries.push({
+		entryId: 15,
+		image: "BarnhillDermPath-038-0021.png",
+		description: "Spongiotic dermatitis, acute versus chronic changes. Spongiosis and neutrophilic crustare characteristic of a self-limited contact dermatitis (left). In contrast, chronic spongiotic dermatitis results in dermal ﬁbrosis and vascular proliferation (right).(DermPathBarnhill, FIGURE 1-9)",
+		diagnosis: "Spongiatic dermatitus"
+	});
 	var database = {};
 	database.entries = entries;
 	// end mock database
 
-	angular.module("opid").service("database", [function () {
+	angular.module("opid").service("database", ["$q", function ($q) {
 		var self = this;
 
 		self.getEntry = function (entryId) {
-			var entry = _.find(database.entries, { 'entryId': parseInt(entryId) });
-			return entry;
+			return $q.when(_.find(database.entries, { 'entryId': parseInt(entryId) }));
+		};
+
+		self.searchEntries = function (searchText, page, pageSize) {
+			return $q.when({
+				results: _.take(_.slice(database.entries, (page - 1) * pageSize), pageSize),
+				resultCount: entries.length
+			});
 		};
 
 		return self;

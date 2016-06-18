@@ -21,8 +21,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a target="_self" href="@Url.Action("About", "Home")">About</a></li>
+                    <li><a target="_self" href="@Url.Action("Contact", "Home")">Contact</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

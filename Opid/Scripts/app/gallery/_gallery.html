@@ -1,1 +1,31 @@
-﻿<div>[gallery]</div>
+﻿<div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+			<div class="input-group">
+				<input type="text" ng-model="vm.searchText" class="form-control input-lg"
+					   placeholder="Search..." autofocus />
+				<div class="input-group-addon">
+					<span class="glyphicon glyphicon-search"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-show="vm.entries" style="margin-top:20px;">
+		<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="entry in vm.entries">
+			<div class="thumbnail gallery-thumb" ui-sref="gallery.entry({ entryId: entry.entryId })">
+				<img ng-src="/Content/images/{{ entry.image }}" />
+				<div class="caption">
+					<h4 class="diagnosis">{{ entry.diagnosis }}</h4>
+					<p class="description">{{ entry.description }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<uib-pagination ng-model="vm.page"
+							ng-show="vm.entryCount > vm.pageSize"
+							total-items="vm.entryCount"></uib-pagination>
+		</div>
+	</div>
+</div>
