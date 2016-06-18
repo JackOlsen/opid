@@ -1,7 +1,15 @@
 ﻿<div>
-	<p>Description: {{ vm.entry.description }}</p>
-	<p>Diagnosis: {{ vm.entry.diagnosis }}</p>
-	<div>
-		<img src="/Content/images/{{ vm.entry.image }}" />
+	<div class="row">
+		<div class="col-xs-12">
+			<a href="#" ui-sref="gallery">
+				<span class="glyphicon glyphicon-arrow-left"></span>
+				Back to search results
+			</a>
+		</div>
 	</div>
+	<h3>{{ vm.entry.diagnosis }}</h3>
+	<div class="jumbotron text-center">
+		<img src="/Content/images/{{ vm.entry.image }}" class="entry-image" />
+	</div>
+	<p>{{ vm.entry.description }}</p>
 </div>
