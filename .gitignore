@@ -5,5 +5,5 @@ packages
 Opid/.vs
 Opid/bin
 Opid/obj
-Content/**/*.css
-Scripts/_references.js
+Opid/Content/**/*.css
+Opid/Scripts/_references.js

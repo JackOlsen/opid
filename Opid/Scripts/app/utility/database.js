@@ -96,14 +96,17 @@
 	database.entries = entries;
 	// end mock database
 
-	angular.module("opid").service("database", ["$q", function ($q) {
+	angular.module("opid").service("database", ["$q", "sessionState", function ($q, sessionState) {
 		var self = this;
 
 		self.getEntry = function (entryId) {
 			return $q.when(_.find(database.entries, { 'entryId': parseInt(entryId) }));
 		};
 
-		self.searchEntries = function (searchText, page, pageSize) {
+		self.searchEntries = function () {
+			var searchText = sessionState.searchState.searchText;
+			var page = sessionState.searchState.page;
+			var pageSize = sessionState.searchState.pageSize;
 			return $q.when({
 				results: _.take(_.slice(database.entries, (page - 1) * pageSize), pageSize),
 				resultCount: entries.length

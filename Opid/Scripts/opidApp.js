@@ -66,6 +66,11 @@
 							controller: "galleryController",
 							controllerAs: "vm"
 						}
+					},
+					resolve: {
+						searchResults: ["database", function (database) {
+							return database.searchEntries();
+						}]
 					}
 				}).state("gallery.entry", {
 					url: "/{entryId:[0-9]*}",
@@ -79,10 +84,7 @@
 					resolve: {
                 		entry: ["database", "$stateParams", function (database, $stateParams) {
                 			return database.getEntry($stateParams.entryId);
-                		}],
-                		meh: function () {
-                			return 'test';
-                		}
+                		}]
 					}
 				});
         }]);

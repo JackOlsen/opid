@@ -1,34 +1,22 @@
 ﻿(function (_) {
-    angular.module("opid").controller("galleryController", ["$scope", "database", function ($scope, database) {
+	angular.module("opid").controller("galleryController", ["searchResults", "$state", "sessionState",
+		function (searchResults, $state, sessionState) {
     	var self = this;
 
-    	self.searchText = '';
-    	self.page = 1;
-		self.pageSize = 12;
-		self.entries = null;
-		self.entryCount = null;
+    	self.searchState = sessionState.searchState;
+    	self.searchResults = searchResults;
 
-    	var search = function () {
-    		database.searchEntries(self.searchText, self.page, self.pageSize)
-				.then(function (response) {
-					self.entries = response.results;
-					self.entryCount = response.resultCount;
-				});
-    	};
+		var reloadGallery = function () {
+			$state.go("gallery", {}, { reload: true });
+		}
 
-    	$scope.$watch(function () {
-    		return self.searchText;
-    	}, _.debounce(function (newValue, oldValue) {
-    		if (newValue !== oldValue) {
-    			search();
-    		}
-    	}, 500));
-    	$scope.$watch(function () {
-    		return self.page;
-    	}, function (newValue, oldValue) {
-    		if (newValue !== oldValue) {
-    			search();
-    		}
-    	});
+		self.search = function () {
+			self.searchState.page = 1;
+			reloadGallery();
+		};
+
+		self.pageChanged = function () {
+			reloadGallery();
+		};
     }]);
 }(_));
