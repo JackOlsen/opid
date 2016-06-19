@@ -233,6 +233,25 @@
     <Content Include="Content\images\BarnhillDermPath-039-0023.png" />
     <Content Include="Content\images\BarnhillDermPath-039-0024.png" />
     <Content Include="Content\images\BarnhillDermPath-040-0025.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-024-0007.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-024-0008.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-026-0009.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-027-0010.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-027-0011.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-029-0012.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-030-0013.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-030-0014.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-030-0015.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-031-0016.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-032-0017.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-032-0018.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-037-0019.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-037-0020.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-038-0021.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-038-0022.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-039-0023.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-039-0024.png" />
+    <Content Include="Content\images\thumbnails\BarnhillDermPath-040-0025.png" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
@@ -252,7 +271,6 @@
     <Content Include="Scripts\app\gallery\entryController.js" />
     <Content Include="Scripts\app\gallery\_gallery.html" />
     <Content Include="Scripts\app\gallery\_entry.html" />
-    <Content Include="Scripts\app\utility\sessionState.js" />
     <Content Include="Scripts\jquery.panzoom.min.js" />
     <Content Include="Scripts\opidApp.js" />
     <Content Include="Scripts\bootstrap-sprockets.js" />

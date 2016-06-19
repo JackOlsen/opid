@@ -4,7 +4,7 @@
 			<form ng-submit="vm.search()">
 				<div class="form-group has-feedback">
 					<div class="input-group">
-						<input type="text" ng-model="vm.searchState.searchText" class="form-control input-lg"
+						<input type="text" ng-model="vm.searchText" class="form-control input-lg"
 							   placeholder="Search..." autofocus />
 						<span class="input-group-btn">
 							<button class="btn btn-primary btn-lg" type="submit">
@@ -18,7 +18,7 @@
 	</div>
 	<div class="row" style="margin-top:10px;">
 		<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="entry in vm.searchResults.results">
-			<div class="thumbnail gallery-thumb" ui-sref="gallery.entry({ entryId: entry.entryId })">
+			<div class="thumbnail gallery-thumb" ui-sref="entry({ entryId: entry.entryId })">
 				<div class="img-container">
 					<img ng-src="/Content/images/thumbnails/{{ entry.image }}" />
 				</div>
@@ -31,12 +31,12 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 text-center">
-			<uib-pagination ng-model="vm.searchState.page"							
+			<uib-pagination ng-model="vm.page"							
 							boundary-link-numbers="true"
 							total-items="vm.searchResults.resultCount"
 							max-size="5"
-							items-per-page="vm.searchState.pageSize"
-							ng-change="vm.pageChanged()"></uib-pagination>
+							items-per-page="vm.pageSize"
+							ng-change="vm.onPageChange()"></uib-pagination>
 		</div>
 	</div>
 </div>

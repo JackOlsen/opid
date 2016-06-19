@@ -55,11 +55,20 @@
             attachExceptionHandling($provide);
             $locationProvider.html5Mode({ enabled: true, requireBase: false });
             $urlMatcherFactoryProvider.caseInsensitive(true);
-
-            $urlRouterProvider.otherwise("/gallery");
+			
+            $urlRouterProvider.otherwise("/gallery/1");
         	$stateProvider
 				.state("gallery", {
-					url: "/gallery",
+					url: "/gallery/:page/:searchText",
+					params: {
+						page: {
+							value: "1"
+						},
+						searchText: {
+							value: "",
+							squash: true
+						}
+					},
 					views: {
 						"main@": {
 							templateUrl: "/Scripts/app/gallery/_gallery.html",
@@ -68,12 +77,16 @@
 						}
 					},
 					resolve: {
-						searchResults: ["database", function (database) {
-							return database.searchEntries();
+						searchResults: ["database", "$stateParams", function (database, $stateParams) {
+							return database.searchEntries(
+								$stateParams.searchText,
+								$stateParams.page,
+								12);
 						}]
 					}
-				}).state("gallery.entry", {
-					url: "/{entryId:[0-9]*}",
+				})
+				.state("entry", {
+					url: "/entry/{entryId:[0-9]*}",
 					views: {
 						"main@": {
 							templateUrl: "/Scripts/app/gallery/_entry.html",

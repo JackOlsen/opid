@@ -1,22 +1,25 @@
 ﻿(function (_) {
-	angular.module("opid").controller("galleryController", ["searchResults", "$state", "sessionState",
-		function (searchResults, $state, sessionState) {
+	angular.module("opid").controller("galleryController", ["searchResults", "$state", "$stateParams",
+		function (searchResults, $state, $stateParams) {
     	var self = this;
 
-    	self.searchState = sessionState.searchState;
+    	self.searchText = $stateParams.searchText;
+    	self.page = $stateParams.page;
+    	self.pageSize = 12;
     	self.searchResults = searchResults;
 
-		var reloadGallery = function () {
-			$state.go("gallery", {}, { reload: true });
-		}
+    	self.search = function () {
+    		$state.go("gallery", {
+    			searchText: self.searchText,
+    			page: 1
+    		});
+    	};
 
-		self.search = function () {
-			self.searchState.page = 1;
-			reloadGallery();
-		};
-
-		self.pageChanged = function () {
-			reloadGallery();
-		};
+    	self.onPageChange = function () {
+    		$state.go("gallery", {
+    			searchText: self.searchText,
+    			page: self.page
+    		});
+    	};
     }]);
 }(_));
