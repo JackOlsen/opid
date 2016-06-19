@@ -24,6 +24,7 @@ namespace Opid
 					"~/Scripts/lodash.js",
 					"~/Scripts/fastclick.min.js",
 					"~/Scripts/moment.min.js",
+					"~/Scripts/jquery.panzoom.min.js",
 					"~/Scripts/angular.min.js",
 					"~/Scripts/angular-ui-router.min.js",
 					"~/Scripts/ngMask.min.js",

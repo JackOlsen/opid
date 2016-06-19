@@ -253,6 +253,7 @@
     <Content Include="Scripts\app\gallery\_gallery.html" />
     <Content Include="Scripts\app\gallery\_entry.html" />
     <Content Include="Scripts\app\utility\sessionState.js" />
+    <Content Include="Scripts\jquery.panzoom.min.js" />
     <Content Include="Scripts\opidApp.js" />
     <Content Include="Scripts\bootstrap-sprockets.js" />
     <Content Include="Scripts\bootstrap.js" />
