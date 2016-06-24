@@ -1,18 +1,9 @@
-﻿<div>
+﻿<div id="entry">
 	<h3>{{ vm.entry.diagnosis }}</h3>
-	<div class="jumbotron text-center">
-		<div id="panzoom-toolbox">
-			<div class="panzoom-tool glyphicon glyphicon-zoom-in" uib-tooltip="Scroll or pinch image to zoom" tooltip-placement="left"></div>
-			<br />
-			<div class="panzoom-tool glyphicon glyphicon-move" uib-tooltip="Drag image to move" tooltip-placement="left"></div>
-			<br />
-			<button type="button" class="btn btn-primary" ng-click="vm.resetPanZoom()" uib-tooltip="Reset pan & zoom" tooltip-placement="left">
-				<span class="glyphicon glyphicon-refresh"></span>
-			</button>
-		</div>
-		<div id="panzoom">
-			<img src="/Content/images/{{ vm.entry.image }}" class="entry-image" />
-		</div>
+	<div class="row">
+		<p class="col-xs-12">
+			{{ vm.entry.description }}
+		</p>
 	</div>
-	<p>{{ vm.entry.description }}</p>
+	<entry-images entry="vm.entry"></entry-images>
 </div>

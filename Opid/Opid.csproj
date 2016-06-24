@@ -252,6 +252,7 @@
     <Content Include="Content\images\thumbnails\BarnhillDermPath-039-0023.png" />
     <Content Include="Content\images\thumbnails\BarnhillDermPath-039-0024.png" />
     <Content Include="Content\images\thumbnails\BarnhillDermPath-040-0025.png" />
+    <Content Include="Content\pgwslideshow\pgwslideshow.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.scss</DependentUpon>
     </Content>
@@ -266,6 +267,8 @@
     <Content Include="Scripts\angular-filter.min.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\gallery\entryImages.js" />
+    <Content Include="Scripts\app\gallery\_entryImages.html" />
     <Content Include="Scripts\app\utility\database.js" />
     <Content Include="Scripts\app\gallery\galleryController.js" />
     <Content Include="Scripts\app\gallery\entryController.js" />
@@ -372,6 +375,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\ngMask.min.js" />
+    <Content Include="Scripts\pgwslideshow.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-1.3.3.min.js" />

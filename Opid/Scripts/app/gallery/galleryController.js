@@ -1,4 +1,5 @@
 ﻿(function (_) {
+	'use strict';
 	angular.module("opid").controller("galleryController", ["searchResults", "$state", "$stateParams",
 		function (searchResults, $state, $stateParams) {
     	var self = this;

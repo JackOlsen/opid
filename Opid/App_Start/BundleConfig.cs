@@ -24,6 +24,7 @@ namespace Opid
 					"~/Scripts/lodash.js",
 					"~/Scripts/fastclick.min.js",
 					"~/Scripts/moment.min.js",
+					"~/Scripts/pgwslideshow.js",
 					"~/Scripts/jquery.panzoom.min.js",
 					"~/Scripts/angular.min.js",
 					"~/Scripts/angular-ui-router.min.js",
@@ -36,6 +37,7 @@ namespace Opid
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap/bootstrap.css",
+					  "~/Content/pgwslideshow/pgwslideshow.css",
 					  "~/Content/site.css"));
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿(function (_, $) {
+	'use strict';
     var opidApp = angular.module("opid", ["ui.router", "ngMask", "ui.bootstrap"]);
 
     var configureHttpProvider = function ($httpProvider) {

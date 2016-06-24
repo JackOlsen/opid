@@ -19,10 +19,14 @@
   height: 300px;
   cursor: pointer; }
   .gallery-thumb:hover {
-    border-color: #AAA; }
-  .gallery-thumb img {
+    border-color: #C8C8C8; }
+  .gallery-thumb .img-container {
     height: 150px;
-    border: 1px solid #000; }
+    text-align: center; }
+    .gallery-thumb .img-container img {
+      max-height: 150px;
+      max-width: 100%;
+      border: 1px solid #000; }
   .gallery-thumb .diagnosis {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -30,4 +34,53 @@
   .gallery-thumb .description {
     height: 80px;
     overflow: hidden; }
+
+.form-control-feedback-lg {
+  font-size: 18px; }
+
+#panzoom-toolbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  font-size: 18px; }
+  #panzoom-toolbox .panzoom-tool {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 12px;
+    text-shadow: 3px 3px 3px #000; }
+
+#entry h3, #entry .h3 {
+  margin-top: 0; }
+
+#entry .entry-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000; }
+
+#entry .pgwSlideshow {
+  border-radius: 10px;
+  padding-top: 10px;
+  background-color: #272B30; }
+  #entry .pgwSlideshow .ps-current {
+    min-height: 400px; }
+    #entry .pgwSlideshow .ps-current ul {
+      padding-left: 0; }
+      #entry .pgwSlideshow .ps-current ul li {
+        min-height: 400px; }
+  #entry .pgwSlideshow .img-caption {
+    margin: 10px 15px; }
+  #entry .pgwSlideshow .ps-list {
+    border-radius: 0;
+    background-image: -webkit-linear-gradient(#484e55, #3A3F44 70%, #313539);
+    background-image: -o-linear-gradient(#484e55, #3A3F44 70%, #313539);
+    background-image: linear-gradient(#484e55, #3A3F44 70%, #313539);
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff484e55', endColorstr='#ff313539', GradientType=0);
+    filter: none;
+    border: 1px solid rgba(0, 0, 0, 0.6); }
+    #entry .pgwSlideshow .ps-list li .ps-item {
+      margin: 10px 8px; }
+      #entry .pgwSlideshow .ps-list li .ps-item.ps-selected {
+        border-color: #272B30; }
 

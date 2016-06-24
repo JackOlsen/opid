@@ -20,7 +20,7 @@
 		<div class="col-xs-6 col-sm-4 col-md-3" ng-repeat="entry in vm.searchResults.results">
 			<div class="thumbnail gallery-thumb" ui-sref="entry({ entryId: entry.entryId })">
 				<div class="img-container">
-					<img ng-src="/Content/images/thumbnails/{{ entry.image }}" />
+					<img ng-src="/Content/images/thumbnails/{{ entry.images[0].fileName }}" />
 				</div>
 				<div class="caption">
 					<h4 class="diagnosis">{{ entry.diagnosis }}</h4>
