@@ -81,6 +81,7 @@ body {
 
 #entry .pgwSlideshow .ps-current {
 	min-height: 400px;
+	margin-bottom:10px;
 }
 
 #entry .pgwSlideshow .ps-current ul {
@@ -116,9 +117,12 @@ body {
 
 #panzoom-toolbox {
 	font-size: 18px;
-
+	text-align:right;
 	.panzoom-tool {
 		text-shadow: 3px 3px 3px $dark-color;
+	}
+	.btn {
+		margin-right:5px;
 	}
 
 	.tooltip {
