@@ -1,16 +1,19 @@
 ﻿$font-color: #C8C8C8;
+$light-color:#FFF;
+$dark-color:#000;
 
 body {
-    padding-top: 70px;
-    padding-bottom: 20px;
+	padding-top: 70px;
+	padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+
 	.body-inner-content {
-		min-height:200px;	
+		min-height: 200px;
 	}
 }
 
@@ -18,56 +21,130 @@ body {
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
-    white-space: normal;
+	white-space: normal;
 }
 
 .gallery-thumb {
-	height:300px;
-	cursor:pointer;
+	height: 300px;
+	cursor: pointer;
+
 	&:hover {
-		border-color:$font-color;
+		border-color: $font-color;
 	}
+
 	.img-container {
-		height:150px;
-		text-align:center;
+		height: 150px;
+		text-align: center;
+
 		img {
-			max-height:150px;
-			max-width:100%;
-			border:1px solid #000;
+			max-height: 150px;
+			max-width: 100%;
+			border: 1px solid $dark-color;
 		}
 	}
+
 	.diagnosis {
-		white-space:nowrap;
-		text-overflow:ellipsis;
-		overflow:hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
+
 	.description {
-		height:80px;		
-		overflow:hidden;
+		height: 80px;
+		overflow: hidden;
 	}
 }
 
 .form-control-feedback-lg {
-	font-size:18px;
+	font-size: 18px;
 }
-#panzoom-toolbox {
-	position:absolute;
-	top:10px;
-	right:10px;
-	z-index:10;
-	font-size:18px;
-	.panzoom-tool  {
-		float:right;
-		margin-bottom:10px;
-		margin-right:12px;
-		text-shadow: 3px 3px 3px #000;
-	}
-}
+
 #panzoom {
-	min-height:300px;
+	min-height: 300px;
 }
-.entry-image{
-	max-width:100%;
-	height:auto;
-	border:1px solid #000;
+
+#entry h3, #entry .h3 {
+	margin-top: 0;
+}
+
+#entry .entry-image {
+	max-width: 100%;
+	height: auto;
+	border: 1px solid $dark-color;
+}
+
+#entry .pgwSlideshow {
+	border-radius: 10px;
+	padding-top: 10px;
+	background-color: #272B30;
+}
+
+#entry .pgwSlideshow .ps-current {
+	min-height: 400px;
+}
+
+#entry .pgwSlideshow .ps-current ul {
+	padding-left: 0;
+}
+
+#entry .pgwSlideshow .ps-current ul li {
+	min-height: 400px;
+}
+
+#entry .img-caption {
+	margin: 10px 0;
+}
+
+#entry .pgwSlideshow .ps-list {
+	border-radius: 0;
+	background-image: -webkit-linear-gradient(#484e55, #3A3F44 70%, #313539);
+	background-image: -o-linear-gradient(#484e55, #3A3F44 70%, #313539);
+	background-image: linear-gradient(#484e55, #3A3F44 70%, #313539);
+	background-repeat: no-repeat;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff484e55', endColorstr='#ff313539', GradientType=0);
+	filter: none;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#entry .pgwSlideshow .ps-list li .ps-item {
+	margin: 10px 8px;
+}
+
+#entry .pgwSlideshow .ps-list li .ps-item.ps-selected {
+	border-color: #272B30;
+}
+
+#panzoom-toolbox {
+	font-size: 18px;
+
+	.panzoom-tool {
+		text-shadow: 3px 3px 3px $dark-color;
+	}
+
+	.tooltip {
+		.tooltip-inner {
+			background-color: $light-color;
+			color: $dark-color;
+		}
+		&.left {
+			.tooltip-arrow {
+				border-left-color: $light-color;
+			}
+		}
+		&.right {
+			.tooltip-arrow {
+				border-right-color: $light-color;
+			}
+		}
+		&.top {
+			.tooltip-arrow {
+				border-top-color: $light-color;
+			}
+		}
+		&.bottom {
+			.tooltip-arrow {
+				border-bottom-color: $light-color;
+			}
+		}
+	}	
 }

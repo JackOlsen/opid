@@ -7,20 +7,17 @@
 				</div>
 			</li>
 		</ul>
-	</div>
-	<div style="display:none;" id="img-caption-tmpl">
 		<div class="img-caption">
 			<div class="row">
-				<div class="col-md-11">
+				<div class="col-md-11 col-sm-10 col-xs-8">
 					{{ selectedImage.description }}
 				</div>
-				<div class="col-md-1">
+				<div class="col-md-1 col-sm-2 col-xs-4">
 					<div id="panzoom-toolbox">
-						<div class="panzoom-tool glyphicon glyphicon-zoom-in" uib-tooltip="Scroll or pinch image to zoom" tooltip-placement="left"></div>
+						<span class="panzoom-tool glyphicon glyphicon-zoom-in" uib-tooltip="Scroll or pinch image to zoom" tooltip-placement="left"></span>
+						<span class="panzoom-tool glyphicon glyphicon-move" uib-tooltip="Drag image to pan" tooltip-placement="left"></span>
 						<br />
-						<div class="panzoom-tool glyphicon glyphicon-move" uib-tooltip="Drag image to move" tooltip-placement="left"></div>
-						<br />
-						<button type="button" class="btn btn-primary" ng-click="vm.resetPanZoom()" uib-tooltip="Reset pan & zoom" tooltip-placement="left">
+						<button type="button" class="btn btn-primary" ng-click="resetPanZoom()" uib-tooltip="Reset pan & zoom" tooltip-placement="left">
 							<span class="glyphicon glyphicon-refresh"></span>
 						</button>
 					</div>

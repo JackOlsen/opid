@@ -11,6 +11,14 @@
 			},
 			link: function (scope, element, attrs, ngModel) {
 				scope.selectedImage = null;
+
+				var $panzoom;
+				scope.resetPanZoom = function () {
+					if ($panzoom) {
+						$panzoom.panzoom("reset");
+					}
+    			};
+
 				$timeout(function () {
 					var slideshow = angular.element("#slideshow").pgwSlideshow({
 						displayControls: false,
@@ -22,7 +30,7 @@
 						},
 						afterSlide: function (id) {
 							scope.selectedImage = scope.entry.images[id - 1];
-							var $panzoom = angular.element(".ps-current .elt_" + id + " img").panzoom({
+							$panzoom = angular.element(".ps-current .elt_" + id + " img").panzoom({
 								minScale: 1,
 								contain: false
 							});
@@ -35,11 +43,6 @@
 									animate: false,
 									focal: e
 								});
-							});
-							$timeout(function () {
-								var x = angular.element("#img-caption-tmpl").html();
-								angular.element("#img-caption-dest").remove();
-								angular.element(".ps-list").before("<div id='img-caption-dest'>" + x + "</div>");
 							});
 						}
 					});
