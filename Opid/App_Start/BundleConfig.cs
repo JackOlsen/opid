@@ -19,6 +19,7 @@ namespace Opid
 						"~/Scripts/modernizr-*"));
 
 			bundles.Add(new ScriptBundle("~/bundles/js")
+				.Include("~/Scripts/angular.min.js")				
 				.Include(
 					"~/Scripts/respond.js",
 					"~/Scripts/lodash.js",
@@ -26,7 +27,6 @@ namespace Opid
 					"~/Scripts/moment.min.js",
 					"~/Scripts/pgwslideshow.js",
 					"~/Scripts/jquery.panzoom.min.js",
-					"~/Scripts/angular.min.js",
 					"~/Scripts/angular-ui-router.min.js",
 					"~/Scripts/ngMask.min.js",
 					"~/Scripts/angular-filter.min.js",
@@ -35,8 +35,9 @@ namespace Opid
 					"~/Scripts/opidApp.js")
 				.IncludeDirectory("~/Scripts/app/", "*.js", true));
 
-			bundles.Add(new StyleBundle("~/Content/css").Include(
-					  "~/Content/bootstrap/bootstrap.css",
+			bundles.Add(new StyleBundle("~/Content/css")
+				.Include("~/Content/bootstrap/bootstrap.css")
+				.Include(
 					  "~/Content/pgwslideshow/pgwslideshow.css",
 					  "~/Content/site.css"));
 		}

@@ -1,0 +1,78 @@
+﻿<form ng-submit="vm.submit()">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12" ng-repeat="image in vm.images">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <a class="pull-right" href="#" ng-show="vm.images.length > 1" 
+                                   ng-click="vm.removeImage(image)">
+                                    <span class="glyphicon glyphicon-remove text-danger"></span>
+                                </a>
+                                <label class="control-label">Select Image</label>
+                                <input id="fileupload" type="file" name="files[]" required class="file-input"
+                                       ng-model="image.file"
+                                       file-model="image.file" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">Image Description</label>
+                                <textarea class="form-control" rows="2" required placeholder="Description of this image"
+                                          ng-model="image.description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-12 pull-right" ng-show="vm.images.length < 6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default btn-block" ng-click="vm.addImage()">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    Add Another Image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Entry Details</div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">Diagnosis</label>
+                        <textarea class="form-control" rows="3" required placeholder="Diagnosis" 
+                                  ng-model="vm.diagnosis"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label">Description</label>
+                        <textarea class="form-control" rows="6" placeholder="Description" 
+                                  ng-model="vm.description"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">
+                <span class="glyphicon glyphicon-floppy-disk"></span>
+                Save Entry
+            </button>
+        </div>
+    </div>
+</form>

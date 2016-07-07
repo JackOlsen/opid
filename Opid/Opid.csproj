@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -267,6 +268,8 @@
     <Content Include="Scripts\angular-filter.min.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\contribute\_contribute.html" />
+    <Content Include="Scripts\app\contribute\contributeController.js" />
     <Content Include="Scripts\app\gallery\entryImages.js" />
     <Content Include="Scripts\app\gallery\_entryImages.html" />
     <Content Include="Scripts\app\utility\database.js" />
@@ -274,6 +277,7 @@
     <Content Include="Scripts\app\gallery\entryController.js" />
     <Content Include="Scripts\app\gallery\_gallery.html" />
     <Content Include="Scripts\app\gallery\_entry.html" />
+    <Content Include="Scripts\app\utility\fileModelDirective.js" />
     <Content Include="Scripts\jquery.panzoom.min.js" />
     <Content Include="Scripts\opidApp.js" />
     <Content Include="Scripts\bootstrap-sprockets.js" />

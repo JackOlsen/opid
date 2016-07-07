@@ -58,7 +58,7 @@
             $urlMatcherFactoryProvider.caseInsensitive(true);
 			
             $urlRouterProvider.otherwise("/gallery/1");
-        	$stateProvider
+            $stateProvider
 				.state("gallery", {
 					url: "/gallery/:page/:searchText",
 					params: {
@@ -96,10 +96,20 @@
 						}
 					},
 					resolve: {
-                		entry: ["database", "$stateParams", function (database, $stateParams) {
-                			return database.getEntry($stateParams.entryId);
-                		}]
+						entry: ["database", "$stateParams", function (database, $stateParams) {
+							return database.getEntry($stateParams.entryId);
+						}]
 					}
-				});
+				})
+        		.state("contribute", {
+        			url: "/contribute",
+        			views: {
+        				"main@": {
+        					templateUrl: "/Scripts/app/contribute/_contribute.html",
+        					controller: "contributeController",
+							controllerAs: "vm"
+        				}
+        			}
+        		});
         }]);
 }(_, $));

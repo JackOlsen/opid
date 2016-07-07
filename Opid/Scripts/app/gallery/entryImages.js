@@ -29,7 +29,9 @@
 							elem.panzoom("destory");
 						},
 						afterSlide: function (id) {
-							scope.selectedImage = scope.entry.images[id - 1];
+						    scope.$apply(function () { 
+						        scope.selectedImage = scope.entry.images[id - 1];
+						    });
 							$panzoom = angular.element(".ps-current .elt_" + id + " img").panzoom({
 								minScale: 1,
 								contain: false
